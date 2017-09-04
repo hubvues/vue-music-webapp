@@ -11,7 +11,7 @@
           <i class="fa fa-play-circle-o"></i>
           <p>播放全部</p><span class="song-num">(共10首)</span>
         </div>
-        <div class="song-list">
+        <div class="song-list" v-for="item,index in num">
           <div class="song-content">
             <div class="content-left">
               <h2>爱火花</h2>
@@ -32,6 +32,11 @@ export default {
 components: {
     jiao
   },
+  data(){
+    return{
+      num:8
+    }
+  }
 }
 </script>
 
@@ -57,7 +62,7 @@ components: {
   .yf-choose i {
     margin-top: -5px;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .yf-choose span {

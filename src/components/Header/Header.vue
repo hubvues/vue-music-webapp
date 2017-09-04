@@ -24,6 +24,7 @@
     }
 </script>
 
-<style lang="">
+<style lang="scss">
+@import '../../assets/scss/header.scss';
 
 </style>

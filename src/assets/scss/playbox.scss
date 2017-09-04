@@ -1,0 +1,153 @@
+.play-box {
+    padding: 10px 15px 40px;
+    background: #333;
+    width: 100vw;
+    height: 100vh;
+    .play-title {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #fdfdfb;
+        a {
+            display: inline-flex;
+            align-self: center;
+            i {
+                color: #fff;
+                font-size: 20px;
+            }
+        }
+        .info {
+            width: 80%;
+            p {
+                line-height: 1.5em;
+                color: #fff;
+                font-size: 18px;
+            }
+            span {
+                color: #7a7f8a;
+                font-size: 14px;
+            }
+        }
+        .share {
+            display: flex;
+            align-self: center;
+            i {
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+    }
+    .album {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80%;
+        overflow: hidden;
+        .music-bar {
+            position: relative;
+            display: inline;
+            transition: all 1s ease;
+            z-index: 9;
+            img {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                max-width: 160px;
+                max-height: 180px;
+                margin-left: -30px;
+                z-index: 10;
+                transform-origin: 0 0;
+            }
+        }
+        .active {
+            transform: rotate(-45deg);
+            z-index: 100;
+        }
+        .play-img {
+            max-width: 300px;
+            max-height: 300px;
+            margin: 0 auto;
+            border: 8px solid rgba(41, 45, 56, .4);
+            border-radius: 100%;
+            .imgbox {
+                border: 50px solid #101012;
+                border-radius: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                }
+            }
+        }
+        .display {
+            animation: animations 30s linear infinite;
+            animation-play-state: running;
+        }
+        .dispause {
+            animation: animations 30s linear infinite;
+            animation-play-state: paused;
+        }
+        @keyframes animations {
+            from {
+                transform: rotateZ(0);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+        .option-meun {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            span {
+                color: #bdbebf;
+                font-size: 20px;
+            }
+        }
+    }
+    .playbox-contronl {
+        .rate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            span {
+                font-size: 16px;
+                color: #f9f7f2;
+            }
+            .view-rate {
+                position: relative;
+                width: 65%;
+                height: 5px;
+                background-color: #66696a;
+                .bar {
+                    position: relative;
+                    width: 0;
+                    height: 100%;
+                    background: #ff3838;
+                    .zero {
+                        position: absolute;
+                        top: 2px;
+                        right: 0;
+                        height: 12px;
+                        width: 12px;
+                        background-color: #fff;
+                        transform: translateY(-50%);
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+        .control {
+            display: flex;
+            justify-content: space-between;
+            span {
+                font-size: 30px;
+                color: #fff;
+            }
+        }
+    }
+}

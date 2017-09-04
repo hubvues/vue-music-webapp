@@ -1,31 +1,13 @@
 <template>
   <div>
-    <tou></tou>
+    <app-header></app-header>
     <div class="main ">
       <div class="wl-dynamic">
-        <div class="wl-banner">
-          <ul>
-            <li>
-              <a href="#">
-                <img src="../../assets/img/wl-dynamic.jpg" alt="">
-              </a>
-              <div class="mark">
-                <div class="info">
-                  <h3>#你最想看谁的演唱会?</h3>
-                  <span>已有167人加入</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+  
         <div class="container">
           <div class="wl-hot-topic">
             <div class="titles">
               <h2>热门话题</h2>
-              <a class="more" href="">
-                更多
-                <i class="fa fa-angle-right"></i>
-              </a>
             </div>
             <div class="wl-topic">
               <figure>
@@ -56,26 +38,50 @@
                       <i>+</i> 关注</span>
                   </div>
                 </div>
-                <article>
-                  <p>今天是钟汉良欧巴的生日！想不起来是什么时候开始关注他的作品， 不例外的从电视剧电影里认识他，从而了解原来他还是歌手，并且 获得不少奖项!
-                  </p>
-                  <p>唱跳俱佳，影视双栖，用对演艺事业的不懈追求书写小太阳的耀眼 荣光
-                  </p>
-                </article>
-                <div class="wl-tag">
-                  <span>#手拉手一起做歌单</span>
-                </div>
-                <div class="wl-share-imgs">
-                  <div class="imgs-left">
-                    <img src="../../assets/img/wl-dynamic4.jpg" alt="">
-                  </div>
-                  <div class="imgs-right">
-                    <a href="">
-                      <img src="../../assets/img/wl-dynamic5.jpg" atl>
-                    </a>
-                    <a href="">
-                      <img src="../../assets/img/wl-dynamic6.jpg" atl>
-                    </a>
+                <div class="main-info">
+                  <article>
+                    <p>今天是钟汉良欧巴的生日！想不起来是什么时候开始关注他的作品， 不例外的从电视剧电影里认识他，从而了解原来他还是歌手，并且 获得不少奖项!
+                    </p>
+                  </article>
+                  <div class="medium">
+                    <div class="play-video">
+                      <video src="" class="moive"></video>
+                      <span class="play-times">
+                        <i class="fa fa-video-camera"></i>40万</span>
+                      <span class="all-time">00:00</span>
+                    </div>
+                    <div class="img-clums">
+                     
+                     
+                    </div>
+                    <div class="audio-box">
+                      <audio></audio>
+                      <div class="audio-info">
+                        <div class="info-face">
+                          <img src="" alt="">
+                          <i class="fa fa-play-circle-o"></i>
+                        </div>
+                        <div class="content">
+                          <p>We Can't Stop</p>
+                          <span>Milley Cytus</span>
+                        </div>
+                      </div>
+  
+                    </div>
+                    <div class="tag">———最赞粉丝作品</div>
+                    <div class="button">
+                      <span class="fa fa-thumbs-o-up">
+                        <i>10</i>
+                      </span>
+                      <span class="fa fa-commenting-o">
+                        <i>5</i>
+                      </span>
+                      <span class="fa fa-share-alt">
+                        <i>2</i>
+                      </span>
+                      <span class="fa fa-ellipsis-v"></span>
+                    </div>
+  
                   </div>
                 </div>
               </li>
@@ -85,18 +91,31 @@
         </div>
       </div>
     </div>
-    <jiao></jiao>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import '../../assets/css/wl-dynamic.css'
-import tou from '../../components/Header/Header'
-import jiao from '../../components/Footer/Footer'
+
+import header from '../../components/Header/Header'
+import footer from '../../components/Footer/Footer'
 export default {
   components: {
-    tou,
-    jiao
+    'app-header': header,
+    'app-footer': footer
   },
+  data(){
+    return{
+
+    }
+  },
+  created(){
+    Promise.all([this.$http.get(`http://localhost:3000/event`)]).then((datas)=>{
+    });
+  }
 }
 </script>
+<style lang='scss' scoped>
+@import '../../assets/scss/dynamic.scss';
+</style>
+

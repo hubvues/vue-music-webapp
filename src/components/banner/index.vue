@@ -1,11 +1,8 @@
-<!--
-    轮播banner组件
-    作者：Lewis
--->
+
 <template>
   <div class="zql-banner">
      <swiper :options="swiperOption">
-            <swiperSlide v-for="item,index in banners" :key="index">
+            <swiperSlide v-for="item,index in banners">
                 <img :src="item.pic" />
             </swiperSlide>
             <div class="swiper-pagination"  slot="pagination"></div>

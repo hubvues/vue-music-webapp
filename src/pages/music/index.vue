@@ -1,24 +1,20 @@
 <template>
   <div>
-    <tou></tou>
-    <div>
-      
-      <musicBanner></musicBanner>
-    </div>
-    <jiao></jiao>
+    <header-div></header-div>
+    <musicBanner></musicBanner>
+    <footer-div></footer-div>
   </div>
 </template>
 
 <script>
-import tou from '../../components/Header/Header'
-import jiao from '../../components/Footer/Footer'
-
+import header from '../../components/Header/Header'
+import footer from '../../components/Footer/Footer'
 import musicBanner from '../../components/musicBanner/index'
-
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   components: {
-    tou,
-    jiao,
+    'header-div':header,
+    'footer-div':footer,
     musicBanner
   },
       data() {

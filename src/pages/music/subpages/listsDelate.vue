@@ -82,7 +82,8 @@
                 <span>{{item.name}}</span>{{item.alia[0]}}
               </p>
               <div class="singer-info textLine">
-                <span class="hot">SQ</span> {{item.ar[0].name}} - {{item.al.name}}
+                <!-- <span class="hot">SQ</span> -->
+                {{item.ar[0].name}} - {{item.al.name}} 
   
               </div>
             </div>

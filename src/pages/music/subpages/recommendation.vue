@@ -1,6 +1,5 @@
 <template>
-  <!--推荐页面-->
-  <!--作者：Lewis-->
+ 
   <div>
     <template v-if="isShow">
       <banner :banners="musicData.banners"></banner>
@@ -8,11 +7,11 @@
         <div class="zql-items">
           <figure>
             <lazy-image :src="require('../../../assets/img/radio.png')" alt=""></lazy-image>
-            <figcaption>每日歌曲推荐</figcaption>
+            <figcaption>私人FM</figcaption>
           </figure>
           <figure>
             <lazy-image :src="require('../../../assets/img/MICROPHONE.png')" alt=""></lazy-image>
-            <figcaption>歌手</figcaption>
+            <figcaption>歌手分类</figcaption>
           </figure>
           <figure>
             <lazy-image :src="require('../../../assets/img/book.png')" alt=""></lazy-image>
@@ -29,7 +28,7 @@
             <figure v-for="item,index in musicData.personalized">
               <router-link :to="'/songSheetDelate/'+item.id">
                 <div class="zql-count">
-                  <i class="fa fa-headphones"></i><span>{{Math.floor(item.playCount/10000)+'万'}}</span>
+                  <i class="fa fa-headphones"></i><span>{{num=(item.playCount/10000)<1? Math.ceil(item.playCount):Math.ceil(item.playCount/10000)+"万"}}</span>
                 </div>
                 <lazy-image :src="item.picUrl"></lazy-image>
                 <figcaption class="textEllipsis">{{item.name}}</figcaption>
@@ -115,6 +114,11 @@ export default {
     banner,
     'lazy-image':lazyImage,
     loading,
+  },
+  data(){
+   return{
+     num:''
+   }
   },
  computed:{
    ...mapState({

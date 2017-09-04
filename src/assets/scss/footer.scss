@@ -1,0 +1,38 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, .7);
+    z-index: 999;
+    .footer-img {
+        float: left;
+        margin-right: 11px;
+        img {
+            width: 36px;
+            height: 36px;
+            margin-top: 5px;
+        }
+    }
+    .song-main {
+        float: left;
+        h2 {
+            line-height: 26px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        span {
+            color: #2b2a29;
+            font-size: 12px;
+        }
+    }
+    .icons {
+        float: right;
+        margin-top: 13px;
+        i {
+            margin-left: 20px;
+            color: #b30000;
+            font-size: 20px;
+        }
+    }
+}

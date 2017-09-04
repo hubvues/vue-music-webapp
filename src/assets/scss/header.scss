@@ -1,0 +1,35 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #b30000;
+    color: white;
+    z-index: 100;
+    .navbar {
+        display: flex;
+        padding-top: 32px;
+        padding-bottom: 15px;
+        justify-content: space-between;
+        li {
+            text-align: left;
+            &:nth-of-type(1),
+            &:nth-of-type(5) {
+                i {
+                    margin-top: -7px;
+                    font-size: 32px;
+                }
+            }
+            i {
+                font-size: 20px;
+            }
+            a {
+                color: white;
+                font-size: 20px;
+                opacity: .5;
+            }
+            .router-link-exact-active.active {
+                opacity: 1;
+            }
+        }
+    }
+}

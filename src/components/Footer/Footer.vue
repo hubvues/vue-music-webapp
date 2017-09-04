@@ -1,12 +1,7 @@
 <template>
-  <div>
-    <div class="global-bg">
-      <div class="mark"></div>
-      <img class="main-bg" :src="detail.picUrl" alt="">
-    </div>
     <div class="footer">
       <div class="footer-img">
-        <router-link :to="'/song/'+detail.id">
+        <router-link :to="'/playBox/'+detail.id">
           <img :src="detail.picUrl" alt="">
         </router-link>
       </div>
@@ -22,7 +17,7 @@
       </div>
       <audio ref="audio" :src="url"></audio>
     </div>
-  </div>
+ 
 
 </template>
 
@@ -59,7 +54,7 @@
           this.$http.get('http://localhost:3000/music/url?id=' + id),
           this.$http.get('http://localhost:3000/song/detail?ids=' + id)
         ]).then(data => {
-          // console.log(data);
+         
           this.url = data[0].data.data[0].url;
           this.detail.name = data[1].data.songs[0].name;
           this.detail.picUrl = data[1].data.songs[0].al.picUrl;
@@ -85,7 +80,8 @@
 
 </script>
 
-<style lang="">
+<style lang="scss">
+@import '../../assets/scss/footer.scss';
 
 
 </style>

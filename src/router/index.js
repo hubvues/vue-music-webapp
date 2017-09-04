@@ -27,8 +27,8 @@ import dynamicRouter from './dynamicRouter';
 
 
 /*********** Song start ************* */
-import Song from '../pages/song';
-import SongRouter from './songRouter';
+import playBox from '../pages/playBox';
+import playBoxRouter from './playBoxRouter';
 /*********** Song end ************* */
 
 
@@ -57,10 +57,10 @@ export default new Router({
         dynamicRouter,
         SearchRouter,
         UserCenterRouter,
-        SongRouter,
+        playBoxRouter,
         UsedRouter,
-        listsDelateRouter, 
-        SongSheetDelateRouter 
+        listsDelateRouter,
+        SongSheetDelateRouter
 
     ],
     linkActiveClass: 'active'

@@ -15,7 +15,7 @@
 
 
       <div class="song-detail">
-         <div class="global-bg song-bg">
+         <div class="song-bg">
             <div class="mark"></div>
             <img class="main-bg" :src="detail.coverImgUrl" alt/>
           </div>
@@ -93,7 +93,7 @@
     created() {
       this.$http.get('http://localhost:3000/playlist/detail?id='+this.id)
         .then(data => {
-          // console.log(data)
+        
           this.detail = data.data.playlist;
           this.tracks = this.detail.tracks;
           this.isShow = true;
@@ -111,11 +111,7 @@
   body {
     position: relative;
     background-image: none;
-    .song-footer {
-       .global-bg {
-         display: none;
-      }
-    }
+    
     .wyf-header {
       position: fixed;
       top: 0;
